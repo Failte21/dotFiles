@@ -1,10 +1,38 @@
 {
-	"Print to console": {
-		"prefix": "log",
-		"body": [
-			"console.log('$1')",
-			"$2"
-		],
-		"description": "Log output to console"
-	}
+  "Print to console": {
+    "prefix": "cl",
+    "body": [
+      "console.log('$1');"
+    ],
+    "description": "Log  to console"
+  },
+
+  "Print arg to console": {
+    "prefix": "clp",
+    "body": [
+      "console.log('$1', $1);"
+    ],
+    "description": "Log output to console"
+  },
+
+  "import default": {
+    "prefix": "impd",
+    "body": [
+      "import $1 from $2"
+    ]
+  },
+
+  "import all as": {
+    "prefix": "impa",
+    "body": [
+      "import * as $1 from $2"
+    ]
+  },
+
+  "import": {
+    "prefix": "imp",
+    "body": [
+      "import { $1 } from $2"
+    ]
+  },
 }
