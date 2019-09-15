@@ -1,0 +1,103 @@
+{
+	// debug
+	"Debug var": {
+		"prefix": "dvar",
+		"body": [
+			"printf(\"(debug) $1: %$2\\n\", $1);"
+		],
+	},
+	"Debug": {
+		"prefix": "ddd",
+		"body": [
+			"printf(\"(debug) $1\\n\");"
+		],
+	},
+	"Print to console": {
+		"prefix": "pfs",
+		"body": [
+			"dprintf(${1:1}, \"$2 :: %$3\\n\", $2);"
+		],
+		"description": "Log output to console"
+	},
+	"Print function to console": {
+		"prefix": "pffn",
+		"body": [
+			"dprintf(${1:1}, \"IN: %s\\n\", __func__);"
+		],
+		"description": "Log output to console"
+	},
+	"Print 2": {
+		"prefix": "pfns",
+		"body": [
+			"dprintf(${1:1}, \"$2 :: %$3\\n\", $4);"
+		],
+		"description": "Log output to console"
+	},
+	"Print line": {
+		"prefix": "pfbar",
+		"body": [
+			"dprintf(${1:1}, \"=======================\\n\");"
+		],
+		"description": "Log output to console"
+	},
+	"Print plain string": {
+		"prefix": "pfstr",
+		"body": [
+			"dprintf(${1:1}, \"$2\\n\");"
+		],
+		"description": "Log output to console"
+	},
+	"Quick exit": {
+		"prefix": "eix",
+		"body": [
+			"exit(0);"
+		],
+		"description": "exit(0);"
+	},
+	"Include lib": {
+        "prefix": "inl",
+        "body": [
+            "#include <${1}>"
+        ],
+        "description": "#include <${1}>"
+    },
+    "Include header": {
+        "prefix": "inh",
+        "body": [
+            "#include \"${1}\""
+        ],
+        "description": "#include \"${1}\""
+	},
+	// 42 norme stuff
+	"Insert norm comment": {
+        "prefix": "ncom",
+        "body": [
+            "/*\n** $1\n*/"
+        ],
+        "description": "Norm friendly comment"
+	},
+	"Create norme compliant struct": {
+		"prefix": "nstr",
+		"body": [
+			"typedef struct s_$1",
+			"{",
+			"\t$2",
+			"}\t\t\t\tt_$1;"
+		]
+	},
+	"Create norme compliant global": {
+		"prefix": "nglo",
+		"body": [
+			"static t_$1\tg_$2 ="
+		]
+	},
+	"Create norme compliant enum": {
+		"prefix": "nenu",
+		"body": [
+			"typedef enum\te_$1",
+			"{",
+			"\t$2",
+			"}\t\t\t\tt_$1;"
+		]
+	}
+}
